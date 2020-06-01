@@ -1,19 +1,82 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
+import CharacterList from './components/starwarsChars';
+import Loader from 'react-loader-spinner'
 
-const App = () => {
-  // Try to think through what state you'll need for this app before starting. Then build out
-  // the state properties here.
+class App extends Component {
 
-  // Fetch characters from the API in an effect hook. Remember, anytime you have a 
-  // side effect in a component, you want to think about which state and/or props it should
-  // sync up with, if any.
+  state = {
 
-  return (
-    <div className="App">
-      <h1 className="Header">Characters</h1>
-    </div>
-  );
+    forceData: {}
+
+  }
+
+  componentDidMount() {
+
+    setTimeout(() => this.getCharacters(), 3000);
+
+  }
+
+  getCharacters = (url = 'https://swapi.dev/api/people/') => {
+
+    fetch(url)
+
+      .then(res => res.json())
+
+      .then(data => {
+
+        this.setState({ forceData: data });
+
+      })
+      .catch(err => {
+
+        throw new Error(err);
+
+      });
+
+  };
+
+  render() {
+
+    console.log(this.state.forceData)
+
+    const { results, previous, next } = this.state.forceData;
+
+    return (
+
+      <React.Fragment>
+
+        <div className="sWarsBG">
+
+          <div className="app">
+
+            <div className="header">
+
+              {previous ? <span alt="title" title="Pagination" className="prev" onClick={() => this.getCharacters(previous)}>.</span> : null}
+              
+              <h1>Characters</h1>
+              
+              {next ? <span className="next" onClick={() => this.getCharacters(next)}>.</span> : null}
+            
+            </div>
+            
+            {results
+              
+              ? <CharacterList chars={results} />
+              : <Loader type="Audio" color="cyan" secondaryColor="#ffffff " height={500} width={500} timeout={0}/>
+            
+            }
+          
+          </div>
+
+        </div>
+
+      </React.Fragment>
+
+    );
+
+  }
+  
 }
 
 export default App;
