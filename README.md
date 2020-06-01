@@ -23,6 +23,7 @@ In this challenge, create a web page that presents a styled list of **characters
 ## Self-Study/Essay Questions
 
 Demonstrate your understanding of this Sprint's concepts by answering free-form questions. Edit the `Answers.md` file at the root of the project to include your answer after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your Team Lead.
+ > Complete
 
 ## Project Set Up
 
@@ -36,8 +37,8 @@ Follow these steps to set up and work on your project:
 - [x] Once you have installed the _node_modules_, run `npm start` to get your server up and running.
 - [x] With the server up and running, open Chrome and head over to `localhost:3000` and view your beautiful app. Maybe it's not _that_ pretty... _yet_, your goal is to ensure this project becomes a thing of beauty.
 Follow these steps for completing your project.
-- [ ] Implement the project on this Branch, **committing progress & changes often.**
-- [ ] Push commits: `git push origin <firstName-lastName>`.
+- [x] Implement the project on this Branch, **committing progress & changes often.**
+- [x] Push commits: `git push origin <firstName-lastName>`.
 
 Follow these steps for completing your project:
 
@@ -49,13 +50,13 @@ Follow these steps for completing your project:
 
 Your finished project must include all of the following requirements:
 
-- [ ] Use ONE of the following APIs:
+- [x] Use ONE of the following APIs:
   - [Star Wars API](https://swapi.py4e.com/)
   - [The Rick and Morty API](https://rickandmortyapi.com/)
   - [The RESTful Pokémon API](https://pokeapi.co/) (**harder**)
-- [ ] Use the documentation and Google to learn how to fetch characters from your API.
-- [ ] Obtain a list of characters. One or several requests might be needed, depending on the API.
-- [ ] Set the list of characters into state.
+- [x] Use the documentation and Google to learn how to fetch characters from your API.
+- [x] Obtain a list of characters. One or several requests might be needed, depending on the API.
+- [x] Set the list of characters into state.
 - [ ] Render your characters to the screen:
   - Build a React component named 'Character' to render an individual character.
   - Map over the list in state, and for each character render a Character to the page.
